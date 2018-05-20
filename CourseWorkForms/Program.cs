@@ -18,7 +18,7 @@ namespace CourseWorkForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Views.Medicaments());
+            Application.Run(new Views.MainMenu());
         }
     }
 }
