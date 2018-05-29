@@ -11,9 +11,9 @@ using MaterialSkin;
 
 namespace CourseWorkForms.Views
 {
-    public partial class Medicaments : MaterialSkin.Controls.MaterialForm
+    public partial class Procedures : MaterialSkin.Controls.MaterialForm
     {
-        public Medicaments()
+        public Procedures()
         {
             InitializeComponent();
 
@@ -22,8 +22,10 @@ namespace CourseWorkForms.Views
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "appData.Procedure". При необходимости она может быть перемещена или удалена.
+            this.procedureTableAdapter.Fill(this.appData.Procedure);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "appData.Medicament". При необходимости она может быть перемещена или удалена.
-            this.medicamentTableAdapter.Fill(this.appData.Medicament);
+            //this.medicamentTableAdapter.Fill(this.appData.Medicament);
 
             Edit(false);
         }
@@ -39,14 +41,14 @@ namespace CourseWorkForms.Views
             try
             {
                 Edit(true);
-                appData.Medicament.AddMedicamentRow(""); // appData.Medicament.NewMedicamentRow()
-                medicamentBindingSource.MoveLast();
+                appData.Procedure.AddProcedureRow(""); // appData.Procedure.NewProcedureRow()
+                procedureBindingSource.MoveLast();
                 TxtFldTitle.Focus();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                appData.Medicament.RejectChanges();
+                appData.Procedure.RejectChanges();
             }
         }
 
@@ -59,9 +61,9 @@ namespace CourseWorkForms.Views
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             Edit(false);
-            medicamentBindingSource.ResetBindings(false);
-            appData.Medicament.RejectChanges();
-            medicamentBindingSource.ResetCurrentItem();
+            procedureBindingSource.ResetBindings(false);
+            appData.Procedure.RejectChanges();
+            procedureBindingSource.ResetCurrentItem();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -69,9 +71,9 @@ namespace CourseWorkForms.Views
             try
             {
                 Edit(false);
-                medicamentBindingSource.EndEdit();
+                procedureBindingSource.EndEdit();
                 //appData.Medicament.AcceptChanges(); //
-                medicamentTableAdapter.Update(appData.Medicament);
+                procedureTableAdapter.Update(appData.Procedure);
                 dtGrdMedicament.Refresh();
                 TxtFldTitle.Focus();
                 MessageBox.Show("Your database has been updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -79,7 +81,7 @@ namespace CourseWorkForms.Views
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                appData.Medicament.RejectChanges();
+                appData.Procedure.RejectChanges();
             }
         }
 
@@ -89,7 +91,7 @@ namespace CourseWorkForms.Views
             {
                 if (MessageBox.Show("Are you sure want tot delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    medicamentBindingSource.RemoveCurrent();
+                    procedureBindingSource.RemoveCurrent();
                 }
             }
         }

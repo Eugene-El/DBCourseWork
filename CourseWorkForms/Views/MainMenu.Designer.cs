@@ -28,65 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.BtnPatients = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.BtnDoctors = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.BtnWards = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.BtnProcedures = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnMedicaments = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.BtnExit = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
-            // materialRaisedButton1
+            // BtnPatients
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(12, 75);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(200, 50);
-            this.materialRaisedButton1.TabIndex = 0;
-            this.materialRaisedButton1.Text = "Patients";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.BtnPatients.Depth = 0;
+            this.BtnPatients.Location = new System.Drawing.Point(300, 75);
+            this.BtnPatients.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnPatients.Name = "BtnPatients";
+            this.BtnPatients.Primary = true;
+            this.BtnPatients.Size = new System.Drawing.Size(200, 50);
+            this.BtnPatients.TabIndex = 0;
+            this.BtnPatients.Text = "Patients";
+            this.BtnPatients.UseVisualStyleBackColor = true;
             // 
-            // materialRaisedButton2
+            // BtnDoctors
             // 
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(12, 131);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(200, 50);
-            this.materialRaisedButton2.TabIndex = 1;
-            this.materialRaisedButton2.Text = "Doctors";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.BtnDoctors.Depth = 0;
+            this.BtnDoctors.Location = new System.Drawing.Point(300, 131);
+            this.BtnDoctors.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnDoctors.Name = "BtnDoctors";
+            this.BtnDoctors.Primary = true;
+            this.BtnDoctors.Size = new System.Drawing.Size(200, 50);
+            this.BtnDoctors.TabIndex = 1;
+            this.BtnDoctors.Text = "Doctors";
+            this.BtnDoctors.UseVisualStyleBackColor = true;
             // 
-            // materialRaisedButton3
+            // BtnWards
             // 
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(12, 187);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(200, 50);
-            this.materialRaisedButton3.TabIndex = 2;
-            this.materialRaisedButton3.Text = "Wards";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.BtnWards.Depth = 0;
+            this.BtnWards.Location = new System.Drawing.Point(300, 187);
+            this.BtnWards.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnWards.Name = "BtnWards";
+            this.BtnWards.Primary = true;
+            this.BtnWards.Size = new System.Drawing.Size(200, 50);
+            this.BtnWards.TabIndex = 2;
+            this.BtnWards.Text = "Wards";
+            this.BtnWards.UseVisualStyleBackColor = true;
             // 
-            // materialRaisedButton4
+            // BtnProcedures
             // 
-            this.materialRaisedButton4.Depth = 0;
-            this.materialRaisedButton4.Location = new System.Drawing.Point(12, 243);
-            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton4.Name = "materialRaisedButton4";
-            this.materialRaisedButton4.Primary = true;
-            this.materialRaisedButton4.Size = new System.Drawing.Size(200, 50);
-            this.materialRaisedButton4.TabIndex = 3;
-            this.materialRaisedButton4.Text = "Procedures";
-            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.BtnProcedures.Depth = 0;
+            this.BtnProcedures.Location = new System.Drawing.Point(300, 243);
+            this.BtnProcedures.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnProcedures.Name = "BtnProcedures";
+            this.BtnProcedures.Primary = true;
+            this.BtnProcedures.Size = new System.Drawing.Size(200, 50);
+            this.BtnProcedures.TabIndex = 3;
+            this.BtnProcedures.Text = "Procedures";
+            this.BtnProcedures.UseVisualStyleBackColor = true;
+            this.BtnProcedures.Click += new System.EventHandler(this.BtnProcedures_Click);
             // 
             // BtnMedicaments
             // 
             this.BtnMedicaments.Depth = 0;
-            this.BtnMedicaments.Location = new System.Drawing.Point(12, 299);
+            this.BtnMedicaments.Location = new System.Drawing.Point(300, 299);
             this.BtnMedicaments.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnMedicaments.Name = "BtnMedicaments";
             this.BtnMedicaments.Primary = true;
@@ -96,17 +98,36 @@
             this.BtnMedicaments.UseVisualStyleBackColor = true;
             this.BtnMedicaments.Click += new System.EventHandler(this.BtnMedicaments_Click);
             // 
+            // BtnExit
+            // 
+            this.BtnExit.Depth = 0;
+            this.BtnExit.Location = new System.Drawing.Point(588, 388);
+            this.BtnExit.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Primary = true;
+            this.BtnExit.Size = new System.Drawing.Size(200, 50);
+            this.BtnExit.TabIndex = 5;
+            this.BtnExit.Text = "Exit";
+            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnMedicaments);
-            this.Controls.Add(this.materialRaisedButton4);
-            this.Controls.Add(this.materialRaisedButton3);
-            this.Controls.Add(this.materialRaisedButton2);
-            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.BtnProcedures);
+            this.Controls.Add(this.BtnWards);
+            this.Controls.Add(this.BtnDoctors);
+            this.Controls.Add(this.BtnPatients);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(800, 450);
+            this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "MainMenu";
+            this.Sizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hospital manager";
             this.ResumeLayout(false);
 
@@ -114,10 +135,11 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnPatients;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnDoctors;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnWards;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnProcedures;
         private MaterialSkin.Controls.MaterialRaisedButton BtnMedicaments;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnExit;
     }
 }

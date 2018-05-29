@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,8 @@ namespace CourseWorkForms.Views
         public MainMenu()
         {
             InitializeComponent();
-        }
 
-        private void BtnMedicaments_Click(object sender, EventArgs e)
-        {
-            ChangeView(new Medicaments());
+            DesignManager.ConfigurateForm(this);
         }
 
         private void ChangeView(MaterialForm form)
@@ -31,6 +29,21 @@ namespace CourseWorkForms.Views
                 Show();
             };
             form.Show();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnMedicaments_Click(object sender, EventArgs e)
+        {
+            ChangeView(new Medicaments());
+        }
+
+        private void BtnProcedures_Click(object sender, EventArgs e)
+        {
+            ChangeView(new Procedures());
         }
     }
 }

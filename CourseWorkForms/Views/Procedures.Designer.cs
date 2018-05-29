@@ -1,6 +1,6 @@
 ﻿namespace CourseWorkForms.Views
 {
-    partial class Medicaments
+    partial class Procedures
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -31,36 +31,36 @@
             this.components = new System.ComponentModel.Container();
             this.LblTitle = new MaterialSkin.Controls.MaterialLabel();
             this.TxtFldTitle = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.medicamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new CourseWorkForms.AppData();
             this.dtGrdMedicament = new System.Windows.Forms.DataGridView();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnNew = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnEdit = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnCancel = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnSave = new MaterialSkin.Controls.MaterialFlatButton();
-            this.medicamentTableAdapter = new CourseWorkForms.AppDataTableAdapters.MedicamentTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.medicamentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.procedureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new CourseWorkForms.AppData();
+            this.procedureTableAdapter = new CourseWorkForms.AppDataTableAdapters.ProcedureTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdMedicament)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.procedureBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
             this.SuspendLayout();
             // 
             // LblTitle
             // 
             this.LblTitle.AutoSize = true;
             this.LblTitle.Depth = 0;
-            this.LblTitle.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblTitle.Location = new System.Drawing.Point(364, 105);
             this.LblTitle.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblTitle.Name = "LblTitle";
-            this.LblTitle.Size = new System.Drawing.Size(43, 19);
+            this.LblTitle.Size = new System.Drawing.Size(39, 18);
             this.LblTitle.TabIndex = 1;
             this.LblTitle.Text = "Title:";
             // 
             // TxtFldTitle
             // 
-            this.TxtFldTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentBindingSource, "Title", true));
+            this.TxtFldTitle.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.procedureBindingSource, "Title", true));
             this.TxtFldTitle.Depth = 0;
             this.TxtFldTitle.Hint = "";
             this.TxtFldTitle.Location = new System.Drawing.Point(413, 105);
@@ -74,36 +74,18 @@
             this.TxtFldTitle.TabIndex = 2;
             this.TxtFldTitle.UseSystemPasswordChar = false;
             // 
-            // medicamentBindingSource
-            // 
-            this.medicamentBindingSource.DataMember = "Medicament";
-            this.medicamentBindingSource.DataSource = this.appData;
-            // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dtGrdMedicament
             // 
             this.dtGrdMedicament.AutoGenerateColumns = false;
             this.dtGrdMedicament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGrdMedicament.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleDataGridViewTextBoxColumn});
-            this.dtGrdMedicament.DataSource = this.medicamentBindingSource;
+            this.dtGrdMedicament.DataSource = this.procedureBindingSource;
             this.dtGrdMedicament.Location = new System.Drawing.Point(54, 105);
             this.dtGrdMedicament.Name = "dtGrdMedicament";
             this.dtGrdMedicament.Size = new System.Drawing.Size(304, 301);
             this.dtGrdMedicament.TabIndex = 0;
             this.dtGrdMedicament.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtGrdMedicament_KeyDown);
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.MaxInputLength = 256;
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.Width = 260;
             // 
             // BtnNew
             // 
@@ -169,11 +151,29 @@
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // medicamentTableAdapter
+            // titleDataGridViewTextBoxColumn
             // 
-            this.medicamentTableAdapter.ClearBeforeFill = true;
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.MaxInputLength = 256;
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.Width = 260;
             // 
-            // Medicaments
+            // procedureBindingSource
+            // 
+            this.procedureBindingSource.DataMember = "Procedure";
+            this.procedureBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // procedureTableAdapter
+            // 
+            this.procedureTableAdapter.ClearBeforeFill = true;
+            // 
+            // Procedures
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,12 +188,12 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(800, 450);
             this.MinimumSize = new System.Drawing.Size(800, 450);
-            this.Name = "Medicaments";
-            this.Text = "Medicaments";
+            this.Name = "Procedures";
+            this.Text = "Procedures";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.medicamentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdMedicament)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.procedureBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,9 +209,9 @@
         private MaterialSkin.Controls.MaterialFlatButton BtnCancel;
         private MaterialSkin.Controls.MaterialFlatButton BtnSave;
         private AppData appData;
-        private System.Windows.Forms.BindingSource medicamentBindingSource;
-        private AppDataTableAdapters.MedicamentTableAdapter medicamentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource procedureBindingSource;
+        private AppDataTableAdapters.ProcedureTableAdapter procedureTableAdapter;
     }
 }
 

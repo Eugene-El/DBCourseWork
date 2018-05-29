@@ -2610,10 +2610,10 @@ namespace CourseWorkForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProcedureRow AddProcedureRow(int ID, string Title) {
+            public ProcedureRow AddProcedureRow(string Title) {
                 ProcedureRow rowProcedureRow = ((ProcedureRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Title};
                 rowProcedureRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProcedureRow);
@@ -2657,6 +2657,7 @@ namespace CourseWorkForms {
                 base.Columns.Add(this.columnTitle);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnTitle.AllowDBNull = false;
