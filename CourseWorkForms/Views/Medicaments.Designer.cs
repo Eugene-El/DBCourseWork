@@ -91,9 +91,9 @@
             this.dtGrdMedicament.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleDataGridViewTextBoxColumn});
             this.dtGrdMedicament.DataSource = this.medicamentBindingSource;
-            this.dtGrdMedicament.Location = new System.Drawing.Point(54, 105);
+            this.dtGrdMedicament.Location = new System.Drawing.Point(55, 105);
             this.dtGrdMedicament.Name = "dtGrdMedicament";
-            this.dtGrdMedicament.Size = new System.Drawing.Size(304, 301);
+            this.dtGrdMedicament.Size = new System.Drawing.Size(305, 300);
             this.dtGrdMedicament.TabIndex = 0;
             this.dtGrdMedicament.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtGrdMedicament_KeyDown);
             // 
@@ -110,7 +110,7 @@
             this.BtnNew.AutoSize = true;
             this.BtnNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnNew.Depth = 0;
-            this.BtnNew.Location = new System.Drawing.Point(515, 370);
+            this.BtnNew.Location = new System.Drawing.Point(515, 369);
             this.BtnNew.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnNew.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnNew.Name = "BtnNew";
@@ -126,7 +126,7 @@
             this.BtnEdit.AutoSize = true;
             this.BtnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnEdit.Depth = 0;
-            this.BtnEdit.Location = new System.Drawing.Point(565, 370);
+            this.BtnEdit.Location = new System.Drawing.Point(565, 369);
             this.BtnEdit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnEdit.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnEdit.Name = "BtnEdit";
@@ -142,7 +142,7 @@
             this.BtnCancel.AutoSize = true;
             this.BtnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnCancel.Depth = 0;
-            this.BtnCancel.Location = new System.Drawing.Point(614, 370);
+            this.BtnCancel.Location = new System.Drawing.Point(614, 369);
             this.BtnCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnCancel.Name = "BtnCancel";
@@ -158,7 +158,7 @@
             this.BtnSave.AutoSize = true;
             this.BtnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnSave.Depth = 0;
-            this.BtnSave.Location = new System.Drawing.Point(686, 370);
+            this.BtnSave.Location = new System.Drawing.Point(686, 369);
             this.BtnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnSave.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnSave.Name = "BtnSave";

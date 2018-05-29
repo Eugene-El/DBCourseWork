@@ -71,6 +71,7 @@
             this.BtnWards.TabIndex = 2;
             this.BtnWards.Text = "Wards";
             this.BtnWards.UseVisualStyleBackColor = true;
+            this.BtnWards.Click += new System.EventHandler(this.BtnWards_Click);
             // 
             // BtnProcedures
             // 

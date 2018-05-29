@@ -31,30 +31,30 @@
             this.components = new System.ComponentModel.Container();
             this.LblTitle = new MaterialSkin.Controls.MaterialLabel();
             this.TxtFldTitle = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.dtGrdMedicament = new System.Windows.Forms.DataGridView();
+            this.procedureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new CourseWorkForms.AppData();
+            this.dtGrdProcedure = new System.Windows.Forms.DataGridView();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnNew = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnEdit = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnCancel = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnSave = new MaterialSkin.Controls.MaterialFlatButton();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.procedureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new CourseWorkForms.AppData();
             this.procedureTableAdapter = new CourseWorkForms.AppDataTableAdapters.ProcedureTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGrdMedicament)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.procedureBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrdProcedure)).BeginInit();
             this.SuspendLayout();
             // 
             // LblTitle
             // 
             this.LblTitle.AutoSize = true;
             this.LblTitle.Depth = 0;
-            this.LblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.LblTitle.Font = new System.Drawing.Font("Roboto", 11F);
             this.LblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblTitle.Location = new System.Drawing.Point(364, 105);
             this.LblTitle.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblTitle.Name = "LblTitle";
-            this.LblTitle.Size = new System.Drawing.Size(39, 18);
+            this.LblTitle.Size = new System.Drawing.Size(43, 19);
             this.LblTitle.TabIndex = 1;
             this.LblTitle.Text = "Title:";
             // 
@@ -74,25 +74,43 @@
             this.TxtFldTitle.TabIndex = 2;
             this.TxtFldTitle.UseSystemPasswordChar = false;
             // 
-            // dtGrdMedicament
+            // procedureBindingSource
             // 
-            this.dtGrdMedicament.AutoGenerateColumns = false;
-            this.dtGrdMedicament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGrdMedicament.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.procedureBindingSource.DataMember = "Procedure";
+            this.procedureBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dtGrdProcedure
+            // 
+            this.dtGrdProcedure.AutoGenerateColumns = false;
+            this.dtGrdProcedure.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGrdProcedure.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.titleDataGridViewTextBoxColumn});
-            this.dtGrdMedicament.DataSource = this.procedureBindingSource;
-            this.dtGrdMedicament.Location = new System.Drawing.Point(54, 105);
-            this.dtGrdMedicament.Name = "dtGrdMedicament";
-            this.dtGrdMedicament.Size = new System.Drawing.Size(304, 301);
-            this.dtGrdMedicament.TabIndex = 0;
-            this.dtGrdMedicament.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtGrdMedicament_KeyDown);
+            this.dtGrdProcedure.DataSource = this.procedureBindingSource;
+            this.dtGrdProcedure.Location = new System.Drawing.Point(55, 105);
+            this.dtGrdProcedure.Name = "dtGrdProcedure";
+            this.dtGrdProcedure.Size = new System.Drawing.Size(305, 300);
+            this.dtGrdProcedure.TabIndex = 0;
+            this.dtGrdProcedure.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtGrdProcedure_KeyDown);
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.MaxInputLength = 256;
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.Width = 260;
             // 
             // BtnNew
             // 
             this.BtnNew.AutoSize = true;
             this.BtnNew.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnNew.Depth = 0;
-            this.BtnNew.Location = new System.Drawing.Point(515, 370);
+            this.BtnNew.Location = new System.Drawing.Point(515, 369);
             this.BtnNew.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnNew.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnNew.Name = "BtnNew";
@@ -108,7 +126,7 @@
             this.BtnEdit.AutoSize = true;
             this.BtnEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnEdit.Depth = 0;
-            this.BtnEdit.Location = new System.Drawing.Point(565, 370);
+            this.BtnEdit.Location = new System.Drawing.Point(565, 369);
             this.BtnEdit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnEdit.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnEdit.Name = "BtnEdit";
@@ -124,7 +142,7 @@
             this.BtnCancel.AutoSize = true;
             this.BtnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnCancel.Depth = 0;
-            this.BtnCancel.Location = new System.Drawing.Point(614, 370);
+            this.BtnCancel.Location = new System.Drawing.Point(614, 369);
             this.BtnCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnCancel.Name = "BtnCancel";
@@ -140,7 +158,7 @@
             this.BtnSave.AutoSize = true;
             this.BtnSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnSave.Depth = 0;
-            this.BtnSave.Location = new System.Drawing.Point(686, 370);
+            this.BtnSave.Location = new System.Drawing.Point(686, 369);
             this.BtnSave.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnSave.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnSave.Name = "BtnSave";
@@ -150,24 +168,6 @@
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.MaxInputLength = 256;
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.Width = 260;
-            // 
-            // procedureBindingSource
-            // 
-            this.procedureBindingSource.DataMember = "Procedure";
-            this.procedureBindingSource.DataSource = this.appData;
-            // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // procedureTableAdapter
             // 
@@ -182,7 +182,7 @@
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.BtnNew);
-            this.Controls.Add(this.dtGrdMedicament);
+            this.Controls.Add(this.dtGrdProcedure);
             this.Controls.Add(this.TxtFldTitle);
             this.Controls.Add(this.LblTitle);
             this.MaximizeBox = false;
@@ -191,9 +191,9 @@
             this.Name = "Procedures";
             this.Text = "Procedures";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtGrdMedicament)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.procedureBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGrdProcedure)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +203,7 @@
 
         private MaterialSkin.Controls.MaterialLabel LblTitle;
         private MaterialSkin.Controls.MaterialSingleLineTextField TxtFldTitle;
-        private System.Windows.Forms.DataGridView dtGrdMedicament;
+        private System.Windows.Forms.DataGridView dtGrdProcedure;
         private MaterialSkin.Controls.MaterialFlatButton BtnNew;
         private MaterialSkin.Controls.MaterialFlatButton BtnEdit;
         private MaterialSkin.Controls.MaterialFlatButton BtnCancel;

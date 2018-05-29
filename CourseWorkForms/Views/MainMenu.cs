@@ -45,5 +45,10 @@ namespace CourseWorkForms.Views
         {
             ChangeView(new Procedures());
         }
+
+        private void BtnWards_Click(object sender, EventArgs e)
+        {
+            ChangeView(new Wards());
+        }
     }
 }

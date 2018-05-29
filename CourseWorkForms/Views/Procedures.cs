@@ -24,8 +24,6 @@ namespace CourseWorkForms.Views
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "appData.Procedure". При необходимости она может быть перемещена или удалена.
             this.procedureTableAdapter.Fill(this.appData.Procedure);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "appData.Medicament". При необходимости она может быть перемещена или удалена.
-            //this.medicamentTableAdapter.Fill(this.appData.Medicament);
 
             Edit(false);
         }
@@ -74,7 +72,7 @@ namespace CourseWorkForms.Views
                 procedureBindingSource.EndEdit();
                 //appData.Medicament.AcceptChanges(); //
                 procedureTableAdapter.Update(appData.Procedure);
-                dtGrdMedicament.Refresh();
+                dtGrdProcedure.Refresh();
                 TxtFldTitle.Focus();
                 MessageBox.Show("Your database has been updated", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -85,7 +83,7 @@ namespace CourseWorkForms.Views
             }
         }
 
-        private void dtGrdMedicament_KeyDown(object sender, KeyEventArgs e)
+        private void dtGrdProcedure_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
             {
