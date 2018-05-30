@@ -68,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppData.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Views\Patients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Patients.Designer.cs">
+      <DependentUpon>Patients.cs</DependentUpon>
+    </Compile>
     <Compile Include="DesignManager.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="Views\MainMenu.cs">
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="Views\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patients.resx">
+      <DependentUpon>Patients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Procedures.resx">
       <DependentUpon>Procedures.cs</DependentUpon>

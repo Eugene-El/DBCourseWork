@@ -17,5 +17,32 @@ namespace CourseWorkForms
                     e.Handled = true;
             }
         }
+
+        public static void OnlyPersonalCode(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && (e.KeyChar != '-'))
+            {
+                if ((e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
+                    e.Handled = true;
+            }
+        }
+
+        public static void OnlyPhone(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && (e.KeyChar != '+'))
+            {
+                if ((e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete))
+                    e.Handled = true;
+            }
+        }
+
+
+        public static void SetMaxLengthForTextField(MaterialSkin.Controls.MaterialSingleLineTextField textField, int maxLength)
+        {
+            textField.KeyPress += (sender, e) => {
+                if ((e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Delete) && textField.TextLength >= maxLength)
+                    e.Handled = true;
+            };
+        }
     }
 }

@@ -47,6 +47,7 @@
             this.BtnPatients.TabIndex = 0;
             this.BtnPatients.Text = "Patients";
             this.BtnPatients.UseVisualStyleBackColor = true;
+            this.BtnPatients.Click += new System.EventHandler(this.BtnPatients_Click);
             // 
             // BtnDoctors
             // 
