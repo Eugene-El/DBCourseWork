@@ -1081,10 +1081,10 @@ namespace CourseWorkForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AllergyRow AddAllergyRow(int ID, PatientRow parentPatientRowByFK_Allergy_ToPatient, MedicamentRow parentMedicamentRowByFK_Allergy_ToMedicament) {
+            public AllergyRow AddAllergyRow(PatientRow parentPatientRowByFK_Allergy_ToPatient, MedicamentRow parentMedicamentRowByFK_Allergy_ToMedicament) {
                 AllergyRow rowAllergyRow = ((AllergyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         null,
                         null};
                 if ((parentPatientRowByFK_Allergy_ToPatient != null)) {
@@ -1138,6 +1138,7 @@ namespace CourseWorkForms {
                 base.Columns.Add(this.columnMedicamentID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnPatientPersonalCode.AllowDBNull = false;

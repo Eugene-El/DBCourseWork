@@ -311,6 +311,7 @@
             this.BtnShowAllergies.TabIndex = 6;
             this.BtnShowAllergies.Text = "Show allergies";
             this.BtnShowAllergies.UseVisualStyleBackColor = true;
+            this.BtnShowAllergies.Click += new System.EventHandler(this.BtnShowAllergies_Click);
             // 
             // BtnShowDiseaseHistory
             // 
