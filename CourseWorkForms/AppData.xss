@@ -10,10 +10,10 @@
     <Shape ID="DesignTable:Allergy" ZOrder="3" X="1124" Y="-55" Height="134" Width="186" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:DiseaseHistory" ZOrder="9" X="576" Y="-42" Height="172" Width="278" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:Doctor" ZOrder="11" X="611" Y="389" Height="172" Width="184" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:MedicamentAssignment" ZOrder="10" X="1242" Y="164" Height="134" Width="285" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:MedicamentAssignment" ZOrder="10" X="1242" Y="164" Height="153" Width="285" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Patient" ZOrder="4" X="876" Y="-60" Height="191" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Procedure" ZOrder="6" X="1222" Y="417" Height="115" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:ProcedureAssignment" ZOrder="8" X="882" Y="416" Height="134" Width="272" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:ProcedureAssignment" ZOrder="8" X="882" Y="416" Height="153" Width="272" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Staying" ZOrder="2" X="419" Y="159" Height="191" Width="271" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Treatment" ZOrder="7" X="789" Y="162" Height="172" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Ward" ZOrder="21" X="384" Y="402" Height="134" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />

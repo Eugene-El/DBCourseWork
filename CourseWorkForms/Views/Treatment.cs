@@ -120,5 +120,35 @@ namespace CourseWorkForms.Views
                 }
             }
         }
+
+        private void BtnMedicamentAssignment_Click(object sender, EventArgs e)
+        {
+            if (dtGrdTreatment.SelectedRows.Count != 0)
+            {
+                MaterialSkin.Controls.MaterialForm form = new MedicamentAssignment(Patient, (AppData.TreatmentRow)((DataRowView)treatmentBindingSource.Current).Row);
+
+                Hide();
+                form.FormClosed += (s, args) =>
+                {
+                    Show();
+                };
+                form.Show();
+            }
+        }
+
+        private void BtnProcedureAssignment_Click(object sender, EventArgs e)
+        {
+            if (dtGrdTreatment.SelectedRows.Count != 0)
+            {
+                MaterialSkin.Controls.MaterialForm form = new ProcedureAssigment(Patient, (AppData.TreatmentRow)((DataRowView)treatmentBindingSource.Current).Row);
+
+                Hide();
+                form.FormClosed += (s, args) =>
+                {
+                    Show();
+                };
+                form.Show();
+            }
+        }
     }
 }

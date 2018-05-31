@@ -50,6 +50,8 @@
             this.LblBeginDate = new MaterialSkin.Controls.MaterialLabel();
             this.doctorTableAdapter = new CourseWorkForms.AppDataTableAdapters.DoctorTableAdapter();
             this.patientTableAdapter = new CourseWorkForms.AppDataTableAdapters.PatientTableAdapter();
+            this.BtnProcedureAssignment = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.BtnMedicamentAssignment = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdTreatment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treatmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
@@ -264,11 +266,39 @@
             // 
             this.patientTableAdapter.ClearBeforeFill = true;
             // 
+            // BtnProcedureAssignment
+            // 
+            this.BtnProcedureAssignment.Depth = 0;
+            this.BtnProcedureAssignment.Location = new System.Drawing.Point(516, 286);
+            this.BtnProcedureAssignment.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnProcedureAssignment.Name = "BtnProcedureAssignment";
+            this.BtnProcedureAssignment.Primary = true;
+            this.BtnProcedureAssignment.Size = new System.Drawing.Size(217, 28);
+            this.BtnProcedureAssignment.TabIndex = 27;
+            this.BtnProcedureAssignment.Text = "ProcedureAssignment";
+            this.BtnProcedureAssignment.UseVisualStyleBackColor = true;
+            this.BtnProcedureAssignment.Click += new System.EventHandler(this.BtnProcedureAssignment_Click);
+            // 
+            // BtnMedicamentAssignment
+            // 
+            this.BtnMedicamentAssignment.Depth = 0;
+            this.BtnMedicamentAssignment.Location = new System.Drawing.Point(516, 252);
+            this.BtnMedicamentAssignment.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnMedicamentAssignment.Name = "BtnMedicamentAssignment";
+            this.BtnMedicamentAssignment.Primary = true;
+            this.BtnMedicamentAssignment.Size = new System.Drawing.Size(217, 28);
+            this.BtnMedicamentAssignment.TabIndex = 26;
+            this.BtnMedicamentAssignment.Text = "Medicament assignment";
+            this.BtnMedicamentAssignment.UseVisualStyleBackColor = true;
+            this.BtnMedicamentAssignment.Click += new System.EventHandler(this.BtnMedicamentAssignment_Click);
+            // 
             // Treatment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnProcedureAssignment);
+            this.Controls.Add(this.BtnMedicamentAssignment);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnEdit);
@@ -318,5 +348,7 @@
         private System.Windows.Forms.BindingSource doctorBindingSource;
         private AppDataTableAdapters.DoctorTableAdapter doctorTableAdapter;
         private AppDataTableAdapters.PatientTableAdapter patientTableAdapter;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnProcedureAssignment;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnMedicamentAssignment;
     }
 }
