@@ -263,7 +263,7 @@
             this.MaximizeBox = false;
             this.Name = "DiseaseHistory";
             this.Sizable = false;
-            this.Text = "DiseaseHistory";
+            this.Text = "Disease history";
             this.Load += new System.EventHandler(this.DiseaseHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdDiseaseHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diseaseHistoryBindingSource)).EndInit();

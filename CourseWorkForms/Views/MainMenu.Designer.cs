@@ -60,6 +60,7 @@
             this.BtnDoctors.TabIndex = 1;
             this.BtnDoctors.Text = "Doctors";
             this.BtnDoctors.UseVisualStyleBackColor = true;
+            this.BtnDoctors.Click += new System.EventHandler(this.BtnDoctors_Click);
             // 
             // BtnWards
             // 

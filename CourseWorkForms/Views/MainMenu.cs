@@ -55,5 +55,10 @@ namespace CourseWorkForms.Views
         {
             ChangeView(new Patients());
         }
+
+        private void BtnDoctors_Click(object sender, EventArgs e)
+        {
+            ChangeView(new Doctors());
+        }
     }
 }

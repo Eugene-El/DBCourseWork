@@ -105,7 +105,7 @@ namespace CourseWorkForms.Views
 
         private void BtnShowStayings_Click(object sender, EventArgs e)
         {
-            if (dtGrdDiseaseHistory.SelectedRows != null)
+            if (dtGrdDiseaseHistory.SelectedRows.Count != 0)
             {
                 MaterialSkin.Controls.MaterialForm form = new Stayings(PersonalCode, (AppData.DiseaseHistoryRow)((DataRowView)diseaseHistoryBindingSource.Current).Row);
 
@@ -120,7 +120,7 @@ namespace CourseWorkForms.Views
 
         private void BtnShowTreatments_Click(object sender, EventArgs e)
         {
-            if (dtGrdDiseaseHistory.SelectedRows != null)
+            if (dtGrdDiseaseHistory.SelectedRows.Count != 0)
             {
                 MaterialSkin.Controls.MaterialForm form = new Treatment(PersonalCode, (AppData.DiseaseHistoryRow)((DataRowView)diseaseHistoryBindingSource.Current).Row);
 
