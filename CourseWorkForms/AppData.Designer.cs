@@ -2007,10 +2007,10 @@ namespace CourseWorkForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MedicamentAssignmentRow AddMedicamentAssignmentRow(int ID, MedicamentRow parentMedicamentRowByFK_Table_ToMedicament, TreatmentRow parentTreatmentRowByFK_Table_ToTreatment) {
+            public MedicamentAssignmentRow AddMedicamentAssignmentRow(MedicamentRow parentMedicamentRowByFK_Table_ToMedicament, TreatmentRow parentTreatmentRowByFK_Table_ToTreatment) {
                 MedicamentAssignmentRow rowMedicamentAssignmentRow = ((MedicamentAssignmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         null,
                         null};
                 if ((parentMedicamentRowByFK_Table_ToMedicament != null)) {
@@ -2064,6 +2064,7 @@ namespace CourseWorkForms {
                 base.Columns.Add(this.columnTreatmentID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnMedicamentID.AllowDBNull = false;
@@ -2897,10 +2898,10 @@ namespace CourseWorkForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProcedureAssignmentRow AddProcedureAssignmentRow(int ID, ProcedureRow parentProcedureRowByFK_ProcedureAssignment_ToProcedure, TreatmentRow parentTreatmentRowByFK_ProcedureAssignment_ToTreatment) {
+            public ProcedureAssignmentRow AddProcedureAssignmentRow(ProcedureRow parentProcedureRowByFK_ProcedureAssignment_ToProcedure, TreatmentRow parentTreatmentRowByFK_ProcedureAssignment_ToTreatment) {
                 ProcedureAssignmentRow rowProcedureAssignmentRow = ((ProcedureAssignmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         null,
                         null};
                 if ((parentProcedureRowByFK_ProcedureAssignment_ToProcedure != null)) {
@@ -2954,6 +2955,7 @@ namespace CourseWorkForms {
                 base.Columns.Add(this.columnTreatmentID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnProcedureID.AllowDBNull = false;
@@ -3211,10 +3213,10 @@ namespace CourseWorkForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public StayingRow AddStayingRow(int ID, System.DateTime BeginningDate, System.DateTime EndDate, DiseaseHistoryRow parentDiseaseHistoryRowByFK_Staying_ToDiseaseHistory, WardRow parentWardRowByFK_Staying_ToWard) {
+            public StayingRow AddStayingRow(System.DateTime BeginningDate, System.DateTime EndDate, DiseaseHistoryRow parentDiseaseHistoryRowByFK_Staying_ToDiseaseHistory, WardRow parentWardRowByFK_Staying_ToWard) {
                 StayingRow rowStayingRow = ((StayingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         BeginningDate,
                         EndDate,
                         null,
@@ -3276,6 +3278,7 @@ namespace CourseWorkForms {
                 base.Columns.Add(this.columnWardNumber);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnBeginningDate.AllowDBNull = false;
@@ -8422,11 +8425,17 @@ SELECT ID, BeginningDate, EndDate, DiseaseHistoryID, WardNumber FROM Staying WHE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, BeginningDate, EndDate, DiseaseHistoryID, WardNumber FROM dbo.Staying";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ID, BeginningDate, EndDate, DiseaseHistoryID, WardNumber FROM dbo.Staying " +
+                "WHERE DiseaseHistoryID=@DiseaseHistoryID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DiseaseHistoryID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DiseaseHistoryID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8451,6 +8460,20 @@ SELECT ID, BeginningDate, EndDate, DiseaseHistoryID, WardNumber FROM Staying WHE
             AppData.StayingDataTable dataTable = new AppData.StayingDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDiseaseHistoryID(AppData.StayingDataTable dataTable, int DiseaseHistoryID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DiseaseHistoryID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

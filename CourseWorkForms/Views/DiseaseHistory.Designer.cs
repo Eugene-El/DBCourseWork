@@ -30,12 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtGrdDiseaseHistory = new System.Windows.Forms.DataGridView();
-            this.beginningDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diseaseHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new CourseWorkForms.AppData();
             this.LblNameSurname = new MaterialSkin.Controls.MaterialLabel();
-            this.diseaseHistoryTableAdapter = new CourseWorkForms.AppDataTableAdapters.DiseaseHistoryTableAdapter();
             this.LblBeginDate = new MaterialSkin.Controls.MaterialLabel();
             this.DtTmBeginDate = new System.Windows.Forms.DateTimePicker();
             this.DtTmEndDate = new System.Windows.Forms.DateTimePicker();
@@ -44,9 +39,14 @@
             this.BtnCancel = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnEdit = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnNew = new MaterialSkin.Controls.MaterialFlatButton();
-            this.patientTableAdapter = new CourseWorkForms.AppDataTableAdapters.PatientTableAdapter();
             this.BtnShowStayings = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnShowTreatments = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.diseaseHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new CourseWorkForms.AppData();
+            this.beginningDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diseaseHistoryTableAdapter = new CourseWorkForms.AppDataTableAdapters.DiseaseHistoryTableAdapter();
+            this.patientTableAdapter = new CourseWorkForms.AppDataTableAdapters.PatientTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdDiseaseHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diseaseHistoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
@@ -66,62 +66,35 @@
             this.dtGrdDiseaseHistory.TabIndex = 0;
             this.dtGrdDiseaseHistory.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtGrdDiseaseHistory_KeyDown);
             // 
-            // beginningDateDataGridViewTextBoxColumn
-            // 
-            this.beginningDateDataGridViewTextBoxColumn.DataPropertyName = "BeginningDate";
-            this.beginningDateDataGridViewTextBoxColumn.HeaderText = "BeginningDate";
-            this.beginningDateDataGridViewTextBoxColumn.Name = "beginningDateDataGridViewTextBoxColumn";
-            this.beginningDateDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // endDateDataGridViewTextBoxColumn
-            // 
-            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
-            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
-            this.endDateDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // diseaseHistoryBindingSource
-            // 
-            this.diseaseHistoryBindingSource.DataMember = "DiseaseHistory";
-            this.diseaseHistoryBindingSource.DataSource = this.appData;
-            // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // LblNameSurname
             // 
             this.LblNameSurname.AutoSize = true;
             this.LblNameSurname.Depth = 0;
-            this.LblNameSurname.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblNameSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblNameSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblNameSurname.Location = new System.Drawing.Point(55, 105);
             this.LblNameSurname.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblNameSurname.Name = "LblNameSurname";
-            this.LblNameSurname.Size = new System.Drawing.Size(120, 19);
+            this.LblNameSurname.Size = new System.Drawing.Size(120, 18);
             this.LblNameSurname.TabIndex = 1;
             this.LblNameSurname.Text = "[Name Surname]";
-            // 
-            // diseaseHistoryTableAdapter
-            // 
-            this.diseaseHistoryTableAdapter.ClearBeforeFill = true;
             // 
             // LblBeginDate
             // 
             this.LblBeginDate.AutoSize = true;
             this.LblBeginDate.Depth = 0;
-            this.LblBeginDate.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblBeginDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblBeginDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblBeginDate.Location = new System.Drawing.Point(370, 139);
             this.LblBeginDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblBeginDate.Name = "LblBeginDate";
-            this.LblBeginDate.Size = new System.Drawing.Size(83, 19);
+            this.LblBeginDate.Size = new System.Drawing.Size(81, 18);
             this.LblBeginDate.TabIndex = 2;
             this.LblBeginDate.Text = "Begin date:";
             // 
             // DtTmBeginDate
             // 
+            this.DtTmBeginDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.diseaseHistoryBindingSource, "BeginningDate", true));
             this.DtTmBeginDate.Location = new System.Drawing.Point(459, 139);
             this.DtTmBeginDate.Name = "DtTmBeginDate";
             this.DtTmBeginDate.Size = new System.Drawing.Size(273, 20);
@@ -129,6 +102,7 @@
             // 
             // DtTmEndDate
             // 
+            this.DtTmEndDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.diseaseHistoryBindingSource, "EndDate", true));
             this.DtTmEndDate.Location = new System.Drawing.Point(459, 165);
             this.DtTmEndDate.Name = "DtTmEndDate";
             this.DtTmEndDate.Size = new System.Drawing.Size(273, 20);
@@ -138,12 +112,12 @@
             // 
             this.LblEndDate.AutoSize = true;
             this.LblEndDate.Depth = 0;
-            this.LblEndDate.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblEndDate.Location = new System.Drawing.Point(370, 165);
             this.LblEndDate.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblEndDate.Name = "LblEndDate";
-            this.LblEndDate.Size = new System.Drawing.Size(71, 19);
+            this.LblEndDate.Size = new System.Drawing.Size(70, 18);
             this.LblEndDate.TabIndex = 4;
             this.LblEndDate.Text = "End date:";
             // 
@@ -211,10 +185,6 @@
             this.BtnNew.UseVisualStyleBackColor = true;
             this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
-            // patientTableAdapter
-            // 
-            this.patientTableAdapter.ClearBeforeFill = true;
-            // 
             // BtnShowStayings
             // 
             this.BtnShowStayings.Depth = 0;
@@ -226,6 +196,7 @@
             this.BtnShowStayings.TabIndex = 17;
             this.BtnShowStayings.Text = "Show Stayings";
             this.BtnShowStayings.UseVisualStyleBackColor = true;
+            this.BtnShowStayings.Click += new System.EventHandler(this.BtnShowStayings_Click);
             // 
             // BtnShowTreatments
             // 
@@ -238,6 +209,38 @@
             this.BtnShowTreatments.TabIndex = 16;
             this.BtnShowTreatments.Text = "Show treatments";
             this.BtnShowTreatments.UseVisualStyleBackColor = true;
+            // 
+            // diseaseHistoryBindingSource
+            // 
+            this.diseaseHistoryBindingSource.DataMember = "DiseaseHistory";
+            this.diseaseHistoryBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // beginningDateDataGridViewTextBoxColumn
+            // 
+            this.beginningDateDataGridViewTextBoxColumn.DataPropertyName = "BeginningDate";
+            this.beginningDateDataGridViewTextBoxColumn.HeaderText = "BeginningDate";
+            this.beginningDateDataGridViewTextBoxColumn.Name = "beginningDateDataGridViewTextBoxColumn";
+            this.beginningDateDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // endDateDataGridViewTextBoxColumn
+            // 
+            this.endDateDataGridViewTextBoxColumn.DataPropertyName = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.HeaderText = "EndDate";
+            this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
+            this.endDateDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // diseaseHistoryTableAdapter
+            // 
+            this.diseaseHistoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // patientTableAdapter
+            // 
+            this.patientTableAdapter.ClearBeforeFill = true;
             // 
             // DiseaseHistory
             // 

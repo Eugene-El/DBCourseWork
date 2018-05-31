@@ -30,7 +30,6 @@ namespace CourseWorkForms.Views
             diseaseHistoryTableAdapter.FillByPersonalCode(appData.DiseaseHistory, PersonalCode);
 
             Patient = patientTableAdapter.GetPersonByPersonalCode(PersonalCode).First();
-
             LblNameSurname.Text = Patient.Name + " " + Patient.Surname;
 
             Edit(false);
@@ -101,6 +100,21 @@ namespace CourseWorkForms.Views
                 {
                     diseaseHistoryBindingSource.RemoveCurrent();
                 }
+            }
+        }
+
+        private void BtnShowStayings_Click(object sender, EventArgs e)
+        {
+            if (dtGrdDiseaseHistory.SelectedRows != null)
+            {
+                MaterialSkin.Controls.MaterialForm form = new Stayings(PersonalCode, (AppData.DiseaseHistoryRow)((DataRowView)diseaseHistoryBindingSource.Current).Row);
+
+                Hide();
+                form.FormClosed += (s, args) =>
+                {
+                    Show();
+                };
+                form.Show();
             }
         }
     }
