@@ -1387,10 +1387,10 @@ namespace CourseWorkForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DiseaseHistoryRow AddDiseaseHistoryRow(int ID, System.DateTime BeginningDate, System.DateTime EndDate, PatientRow parentPatientRowByFK_DiseaseHistory_ToPatient) {
+            public DiseaseHistoryRow AddDiseaseHistoryRow(System.DateTime BeginningDate, System.DateTime EndDate, PatientRow parentPatientRowByFK_DiseaseHistory_ToPatient) {
                 DiseaseHistoryRow rowDiseaseHistoryRow = ((DiseaseHistoryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         BeginningDate,
                         EndDate,
                         null};
@@ -1445,6 +1445,7 @@ namespace CourseWorkForms {
                 base.Columns.Add(this.columnPatientPersonalCode);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnBeginningDate.AllowDBNull = false;
@@ -6201,11 +6202,17 @@ SELECT ID, BeginningDate, EndDate, PatientPersonalCode FROM DiseaseHistory WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, BeginningDate, EndDate, PatientPersonalCode FROM dbo.DiseaseHistory";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ID, BeginningDate, EndDate, PatientPersonalCode FROM dbo.DiseaseHistory WH" +
+                "ERE PatientPersonalCode = @PatientPersonalCode";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PatientPersonalCode", global::System.Data.SqlDbType.NChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "PatientPersonalCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6230,6 +6237,25 @@ SELECT ID, BeginningDate, EndDate, PatientPersonalCode FROM DiseaseHistory WHERE
             AppData.DiseaseHistoryDataTable dataTable = new AppData.DiseaseHistoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPersonalCode(AppData.DiseaseHistoryDataTable dataTable, string PatientPersonalCode) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((PatientPersonalCode == null)) {
+                throw new global::System.ArgumentNullException("PatientPersonalCode");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PatientPersonalCode));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7309,11 +7335,17 @@ SELECT PersonalCode, Name, Surname, Phone, Adress FROM Patient WHERE (PersonalCo
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PersonalCode, Name, Surname, Phone, Adress FROM dbo.Patient";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT PersonalCode, Name, Surname, Phone, Adress FROM dbo.Patient WHERE Personal" +
+                "Code=@PersonalCode";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PersonalCode", global::System.Data.SqlDbType.NChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "PersonalCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7335,6 +7367,23 @@ SELECT PersonalCode, Name, Surname, Phone, Adress FROM Patient WHERE (PersonalCo
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual AppData.PatientDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            AppData.PatientDataTable dataTable = new AppData.PatientDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AppData.PatientDataTable GetPersonByPersonalCode(string PersonalCode) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((PersonalCode == null)) {
+                throw new global::System.ArgumentNullException("PersonalCode");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PersonalCode));
+            }
             AppData.PatientDataTable dataTable = new AppData.PatientDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

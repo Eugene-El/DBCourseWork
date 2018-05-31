@@ -137,5 +137,21 @@ namespace CourseWorkForms.Views
                 form.Show();
             }
         }
+
+        private void BtnShowDiseaseHistory_Click(object sender, EventArgs e)
+        {
+            AppData.PatientRow patientRow = appData.Patient.FindByPersonalCode(TxtFldPersonalCode.Text);
+            if (TxtFldPersonalCode.TextLength == 12 && patientRow != null)
+            {
+                MaterialSkin.Controls.MaterialForm form = new DiseaseHistory(patientRow.PersonalCode);
+
+                Hide();
+                form.FormClosed += (s, args) =>
+                {
+                    Show();
+                };
+                form.Show();
+            }
+        }
     }
 }

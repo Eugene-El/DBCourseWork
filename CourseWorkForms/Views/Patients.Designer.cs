@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtGrdPatient = new System.Windows.Forms.DataGridView();
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.appData = new CourseWorkForms.AppData();
-            this.patientTableAdapter = new CourseWorkForms.AppDataTableAdapters.PatientTableAdapter();
             this.TxtFldSurname = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtFldName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.TxtFldPersonalCode = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -49,11 +46,14 @@
             this.BtnNew = new MaterialSkin.Controls.MaterialFlatButton();
             this.BtnShowAllergies = new MaterialSkin.Controls.MaterialRaisedButton();
             this.BtnShowDiseaseHistory = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appData = new CourseWorkForms.AppData();
             this.personalCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientTableAdapter = new CourseWorkForms.AppDataTableAdapters.PatientTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData)).BeginInit();
@@ -76,20 +76,6 @@
             this.dtGrdPatient.TabIndex = 0;
             this.dtGrdPatient.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dtGrdPatient_EditingControlShowing);
             this.dtGrdPatient.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtGrdPatient_KeyDown);
-            // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataMember = "Patient";
-            this.patientBindingSource.DataSource = this.appData;
-            // 
-            // appData
-            // 
-            this.appData.DataSetName = "AppData";
-            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patientTableAdapter
-            // 
-            this.patientTableAdapter.ClearBeforeFill = true;
             // 
             // TxtFldSurname
             // 
@@ -175,12 +161,12 @@
             // 
             this.LblPersonalCode.AutoSize = true;
             this.LblPersonalCode.Depth = 0;
-            this.LblPersonalCode.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblPersonalCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblPersonalCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblPersonalCode.Location = new System.Drawing.Point(366, 109);
             this.LblPersonalCode.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblPersonalCode.Name = "LblPersonalCode";
-            this.LblPersonalCode.Size = new System.Drawing.Size(109, 19);
+            this.LblPersonalCode.Size = new System.Drawing.Size(108, 18);
             this.LblPersonalCode.TabIndex = 12;
             this.LblPersonalCode.Text = "Personal code:";
             // 
@@ -188,12 +174,12 @@
             // 
             this.LblName.AutoSize = true;
             this.LblName.Depth = 0;
-            this.LblName.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblName.Location = new System.Drawing.Point(366, 138);
             this.LblName.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblName.Name = "LblName";
-            this.LblName.Size = new System.Drawing.Size(53, 19);
+            this.LblName.Size = new System.Drawing.Size(52, 18);
             this.LblName.TabIndex = 13;
             this.LblName.Text = "Name:";
             // 
@@ -201,12 +187,12 @@
             // 
             this.LblSurname.AutoSize = true;
             this.LblSurname.Depth = 0;
-            this.LblSurname.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblSurname.Location = new System.Drawing.Point(366, 167);
             this.LblSurname.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblSurname.Name = "LblSurname";
-            this.LblSurname.Size = new System.Drawing.Size(72, 19);
+            this.LblSurname.Size = new System.Drawing.Size(72, 18);
             this.LblSurname.TabIndex = 14;
             this.LblSurname.Text = "Surname:";
             // 
@@ -214,12 +200,12 @@
             // 
             this.LblPhone.AutoSize = true;
             this.LblPhone.Depth = 0;
-            this.LblPhone.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblPhone.Location = new System.Drawing.Point(366, 196);
             this.LblPhone.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblPhone.Name = "LblPhone";
-            this.LblPhone.Size = new System.Drawing.Size(55, 19);
+            this.LblPhone.Size = new System.Drawing.Size(55, 18);
             this.LblPhone.TabIndex = 15;
             this.LblPhone.Text = "Phone:";
             // 
@@ -227,12 +213,12 @@
             // 
             this.LblAdress.AutoSize = true;
             this.LblAdress.Depth = 0;
-            this.LblAdress.Font = new System.Drawing.Font("Roboto", 11F);
+            this.LblAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.LblAdress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.LblAdress.Location = new System.Drawing.Point(366, 225);
             this.LblAdress.MouseState = MaterialSkin.MouseState.HOVER;
             this.LblAdress.Name = "LblAdress";
-            this.LblAdress.Size = new System.Drawing.Size(60, 19);
+            this.LblAdress.Size = new System.Drawing.Size(58, 18);
             this.LblAdress.TabIndex = 16;
             this.LblAdress.Text = "Adress:";
             // 
@@ -324,6 +310,17 @@
             this.BtnShowDiseaseHistory.TabIndex = 7;
             this.BtnShowDiseaseHistory.Text = "Show Disease History";
             this.BtnShowDiseaseHistory.UseVisualStyleBackColor = true;
+            this.BtnShowDiseaseHistory.Click += new System.EventHandler(this.BtnShowDiseaseHistory_Click);
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataMember = "Patient";
+            this.patientBindingSource.DataSource = this.appData;
+            // 
+            // appData
+            // 
+            this.appData.DataSetName = "AppData";
+            this.appData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // personalCodeDataGridViewTextBoxColumn
             // 
@@ -359,6 +356,10 @@
             this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
             this.adressDataGridViewTextBoxColumn.MaxInputLength = 256;
             this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            // 
+            // patientTableAdapter
+            // 
+            this.patientTableAdapter.ClearBeforeFill = true;
             // 
             // Patients
             // 
