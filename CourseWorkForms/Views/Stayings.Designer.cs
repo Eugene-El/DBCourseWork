@@ -42,7 +42,7 @@
             this.DtTmBeginDate = new System.Windows.Forms.DateTimePicker();
             this.LblBeginDate = new MaterialSkin.Controls.MaterialLabel();
             this.LblWard = new MaterialSkin.Controls.MaterialLabel();
-            this.CmBxWard = new System.Windows.Forms.ComboBox();
+            this.CmBxDoctor = new System.Windows.Forms.ComboBox();
             this.wardBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wardTableAdapter = new CourseWorkForms.AppDataTableAdapters.WardTableAdapter();
             this.BtnSave = new MaterialSkin.Controls.MaterialFlatButton();
@@ -173,17 +173,17 @@
             this.LblWard.TabIndex = 10;
             this.LblWard.Text = "Ward:";
             // 
-            // CmBxWard
+            // CmBxDoctor
             // 
-            this.CmBxWard.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.stayingBindingSource, "WardNumber", true));
-            this.CmBxWard.DataSource = this.wardBindingSource;
-            this.CmBxWard.DisplayMember = "Number";
-            this.CmBxWard.FormattingEnabled = true;
-            this.CmBxWard.Location = new System.Drawing.Point(459, 192);
-            this.CmBxWard.Name = "CmBxWard";
-            this.CmBxWard.Size = new System.Drawing.Size(273, 21);
-            this.CmBxWard.TabIndex = 11;
-            this.CmBxWard.ValueMember = "Number";
+            this.CmBxDoctor.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.stayingBindingSource, "WardNumber", true));
+            this.CmBxDoctor.DataSource = this.wardBindingSource;
+            this.CmBxDoctor.DisplayMember = "Number";
+            this.CmBxDoctor.FormattingEnabled = true;
+            this.CmBxDoctor.Location = new System.Drawing.Point(459, 192);
+            this.CmBxDoctor.Name = "CmBxDoctor";
+            this.CmBxDoctor.Size = new System.Drawing.Size(273, 21);
+            this.CmBxDoctor.TabIndex = 11;
+            this.CmBxDoctor.ValueMember = "Number";
             // 
             // wardBindingSource
             // 
@@ -271,7 +271,7 @@
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.BtnNew);
-            this.Controls.Add(this.CmBxWard);
+            this.Controls.Add(this.CmBxDoctor);
             this.Controls.Add(this.LblWard);
             this.Controls.Add(this.DtTmEndDate);
             this.Controls.Add(this.LblEndDate);
@@ -306,7 +306,7 @@
         private System.Windows.Forms.DateTimePicker DtTmBeginDate;
         private MaterialSkin.Controls.MaterialLabel LblBeginDate;
         private MaterialSkin.Controls.MaterialLabel LblWard;
-        private System.Windows.Forms.ComboBox CmBxWard;
+        private System.Windows.Forms.ComboBox CmBxDoctor;
         private System.Windows.Forms.BindingSource wardBindingSource;
         private AppDataTableAdapters.WardTableAdapter wardTableAdapter;
         private MaterialSkin.Controls.MaterialFlatButton BtnSave;

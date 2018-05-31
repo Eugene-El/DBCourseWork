@@ -114,6 +114,12 @@
     <Compile Include="Views\Stayings.Designer.cs">
       <DependentUpon>Stayings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Treatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Treatment.Designer.cs">
+      <DependentUpon>Treatment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Wards.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Stayings.resx">
       <DependentUpon>Stayings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Treatment.resx">
+      <DependentUpon>Treatment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Wards.resx">
       <DependentUpon>Wards.cs</DependentUpon>

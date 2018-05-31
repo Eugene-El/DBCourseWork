@@ -3538,10 +3538,10 @@ namespace CourseWorkForms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public TreatmentRow AddTreatmentRow(int ID, System.DateTime BeginningDate, System.DateTime EndDate, DoctorRow parentDoctorRowByFK_Treatment_ToDoctor, DiseaseHistoryRow parentDiseaseHistoryRowByFK_Treatment_ToDiseaseHistory) {
+            public TreatmentRow AddTreatmentRow(System.DateTime BeginningDate, System.DateTime EndDate, DoctorRow parentDoctorRowByFK_Treatment_ToDoctor, DiseaseHistoryRow parentDiseaseHistoryRowByFK_Treatment_ToDiseaseHistory) {
                 TreatmentRow rowTreatmentRow = ((TreatmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         BeginningDate,
                         EndDate,
                         null,
@@ -3603,6 +3603,7 @@ namespace CourseWorkForms {
                 base.Columns.Add(this.columnDiseaseHistoryID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnDoctorPersonalCode.AllowDBNull = false;
@@ -8818,12 +8819,18 @@ SELECT ID, BeginningDate, EndDate, DoctorPersonalCode, DiseaseHistoryID FROM Tre
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, BeginningDate, EndDate, DoctorPersonalCode, DiseaseHistoryID FROM dbo." +
                 "Treatment";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT ID, BeginningDate, EndDate, DoctorPersonalCode, DiseaseHistoryID FROM dbo." +
+                "Treatment WHERE DiseaseHistoryID = @DiseaseHistoryID ";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DiseaseHistoryID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DiseaseHistoryID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8848,6 +8855,20 @@ SELECT ID, BeginningDate, EndDate, DoctorPersonalCode, DiseaseHistoryID FROM Tre
             AppData.TreatmentDataTable dataTable = new AppData.TreatmentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDiseaseHistoryID_(AppData.TreatmentDataTable dataTable, int DiseaseHistoryID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(DiseaseHistoryID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

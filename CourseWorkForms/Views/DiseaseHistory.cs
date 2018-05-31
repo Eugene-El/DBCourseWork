@@ -117,5 +117,20 @@ namespace CourseWorkForms.Views
                 form.Show();
             }
         }
+
+        private void BtnShowTreatments_Click(object sender, EventArgs e)
+        {
+            if (dtGrdDiseaseHistory.SelectedRows != null)
+            {
+                MaterialSkin.Controls.MaterialForm form = new Treatment(PersonalCode, (AppData.DiseaseHistoryRow)((DataRowView)diseaseHistoryBindingSource.Current).Row);
+
+                Hide();
+                form.FormClosed += (s, args) =>
+                {
+                    Show();
+                };
+                form.Show();
+            }
+        }
     }
 }

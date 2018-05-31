@@ -46,7 +46,7 @@ namespace CourseWorkForms.Views
             LblWard.Enabled = value;
             DtTmBeginDate.Enabled = value;
             DtTmEndDate.Enabled = value;
-            CmBxWard.Enabled = value;
+            CmBxDoctor.Enabled = value;
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
