@@ -36,6 +36,9 @@ namespace CourseWorkForms.Views
             Patient = patientTableAdapter.GetPersonByPersonalCode(PersonalCode).First();
             LblNameSurname.Text = Patient.Name + " " + Patient.Surname;
 
+            DtTmBeginDate.MinDate = DtTmEndDate.MinDate = DiseaseHistory.BeginningDate;
+            DtTmBeginDate.MaxDate = DtTmEndDate.MaxDate = DiseaseHistory.EndDate;
+
             Edit(false);
         }
 

@@ -150,7 +150,7 @@
             this.MaximizeBox = false;
             this.Name = "ProcedureAssigment";
             this.Sizable = false;
-            this.Text = "ProcedureAssigment";
+            this.Text = "Procedure assigment";
             this.Load += new System.EventHandler(this.ProcedureAssigment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appData)).EndInit();
             this.ResumeLayout(false);

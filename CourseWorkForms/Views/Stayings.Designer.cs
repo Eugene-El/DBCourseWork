@@ -279,7 +279,9 @@
             this.Controls.Add(this.LblBeginDate);
             this.Controls.Add(this.LblNameSurname);
             this.Controls.Add(this.dtGrdStaying);
+            this.MaximizeBox = false;
             this.Name = "Stayings";
+            this.Sizable = false;
             this.Text = "Stayings";
             this.Load += new System.EventHandler(this.Stayings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtGrdStaying)).EndInit();
